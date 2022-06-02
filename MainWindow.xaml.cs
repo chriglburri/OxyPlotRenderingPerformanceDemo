@@ -11,11 +11,12 @@ namespace RenderingPerformance
   /// </summary>
   public partial class MainWindow : Window
   {
-    private const double HIGH_FREQUENCY = 3d;
-    private const double LOW_FREQUENCY = 1d / 500d;
+    private const double HIGH_FREQUENCY = 1d;
+    private const double LOW_FREQUENCY = 1d / 50000d;
     private const string X_AXIS_KEY = nameof(X_AXIS_KEY);
     private const string Y_AXIS_KEY = nameof(Y_AXIS_KEY);
     private const string LEGEND_KEY = nameof(LEGEND_KEY);
+    private bool _useDecimator;
 
     public MainWindow()
     {
@@ -28,6 +29,7 @@ namespace RenderingPerformance
       Plot.Model.Axes.Add(new OxyPlot.Axes.LinearAxis() { Title = "Y-Axis", Position = OxyPlot.Axes.AxisPosition.Left, Key = Y_AXIS_KEY });
       Plot.Model.Legends.Add(new OxyPlot.Legends.Legend() { LegendTitle = "Legend", Key = LEGEND_KEY });
 
+      _useDecimator = true;
       // TODO: change the omega here for the 2 different test cases:
       Plot.Model.Series.Add(BuildSeries(HIGH_FREQUENCY));
       //Plot.Model.Series.Add(BuildSeries(LOW_FREQUENCY));
@@ -37,7 +39,7 @@ namespace RenderingPerformance
 
     private Series BuildSeries(double omega)
     {
-      int count = 20_000;
+      int count = 100_000;
       LineSeries series = new LineSeries
       {
         Title = $"{count} Points with ω={omega}",
@@ -49,7 +51,13 @@ namespace RenderingPerformance
         Enumerable.Range(0, count)
         .Select(t => new DataPoint(t / 100d, Math.Sin(t * omega)))
         );
+      if (_useDecimator)
+      {
+        series.Decimator = Decimator.Decimate;
+      }
       return series;
     }
   }
 }
+
+

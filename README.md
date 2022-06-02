@@ -6,7 +6,7 @@ Demo for the rendering performance problem described in SO
 Reproduce the Problem with High Frequency Sine
 ---
 
-* In MainWindow.xaml.cs make sure the line 33 is a comment:
+* In MainWindow.xaml.cs make sure the line 34 is a comment:
 
 ```csharp
 Plot.Model.Series.Add(BuildSeries(HIGH_FREQUENCY));
@@ -22,7 +22,7 @@ Plot.Model.Series.Add(BuildSeries(HIGH_FREQUENCY));
 Prove That There Is No Problem Low Frequency Sine
 ---
 
-* In MainWindow.xaml.cs make sure the line 32 is a comment:
+* In MainWindow.xaml.cs make sure the line 33 is a comment:
 
 ```csharp
 //Plot.Model.Series.Add(BuildSeries(HIGH_FREQUENCY));
