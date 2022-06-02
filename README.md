@@ -14,7 +14,7 @@ Plot.Model.Series.Add(BuildSeries(HIGH_FREQUENCY));
 ```
 
 * Run the program
-  * 20k HF sinus data points will be generated.
+  * 20k HF sine data points will be generated.
   * The rendering takes some seconds.
   * The plot area is almost covered with the signal.
   * Every action like zooming or panning is noticeably slow.
@@ -30,7 +30,7 @@ Plot.Model.Series.Add(BuildSeries(LOW_FREQUENCY));
 ```
 
 * Run the program
-  * 20k LF sinus data points will be generated.
+  * 20k LF sine data points will be generated.
   * The rendering takes less than a second.
   * Most of the plot area is white. There is a sine line going from left to the right.
   * Actions like zooming and panning are fast.
