@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using System.Windows;
 
-namespace RenderingPerformance
+namespace HighLowFrequencyDemo
 {
   /// <summary>
   /// Interaction logic for MainWindow.xaml

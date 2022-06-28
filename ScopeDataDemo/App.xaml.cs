@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace RenderingPerformance
+namespace ScopeDataDemo
 {
   /// <summary>
   /// Interaction logic for App.xaml
