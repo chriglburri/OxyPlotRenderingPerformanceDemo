@@ -3,9 +3,17 @@ using OxyPlot.Series;
 using System;
 using System.Linq;
 using System.Windows;
+using OxyPlot.Wpf;
 
 namespace HighLowFrequencyDemo
 {
+  public class XamlPlotView : PlotView
+  {
+    protected override IRenderContext CreateRenderContext()
+    {
+      return new XamlRenderContext(this.Canvas);
+    }
+  }
   /// <summary>
   /// Interaction logic for MainWindow.xaml
   /// </summary>
