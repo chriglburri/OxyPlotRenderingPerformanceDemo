@@ -7,9 +7,17 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using OxyPlot.Wpf;
 
 namespace ScopeDataDemo
 {
+  public class XamlPlotView : PlotView
+  {
+    protected override IRenderContext CreateRenderContext()
+    {
+      return new XamlRenderContext(this.Canvas);
+    }
+  }
   public partial class MainWindow : Window
   {
     private const string X_AXIS_KEY = nameof(X_AXIS_KEY);
